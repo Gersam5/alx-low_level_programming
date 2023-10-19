@@ -1,21 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #include "lists.h"
 
 /**
- * list_len - Finds the number of elements in
- *            a linked list_t list.
- * @h: The linked list_t list.
- *
- * Return: The number of elements in h.
+ * list_len - returns no. of elements in a list
+ * @h: takes head of the list
+ * Return: number of nodes in list
  */
 size_t list_len(const list_t *h)
 {
-	size_t elements = 0;
+	size_t n;
 
-	while (h)
+	n = 0;
+
+	while (h != NULL)
 	{
-		elements++;
 		h = h->next;
+		n++;
 	}
 
-	return (elements);
+	return (n);
 }
